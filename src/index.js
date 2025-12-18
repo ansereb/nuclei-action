@@ -99,6 +99,16 @@ async function run() {
     } else {
       core.setOutput('sarif_exists', 'false');
     }
+    if (fs.existsSync(jsonFileName)) {
+      core.setOutput('json_exists', 'true');
+    } else {
+      core.setOutput('json_exists', 'false');
+    }
+    if (fs.existsSync(jsonlFileName)) {
+      core.setOutput('jsonl_exists', 'true');
+    } else {
+      core.setOutput('jsonl_exists', 'false');
+    }
   } catch (error) {
     core.setFailed(error.message);
   }
